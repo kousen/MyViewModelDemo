@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyViewModel Demo</string>
+    <string name="name_hint">Please enter your name</string>
+    <string name="hello_button_label">Say Hello</string>
+</resources>
