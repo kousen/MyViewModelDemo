@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
 
-    private val _greeting = MutableLiveData<String>("Hello, World!")
+    private val _greeting = MutableLiveData("Hello, World!")
     val greeting: LiveData<String>
         get() = _greeting
 
