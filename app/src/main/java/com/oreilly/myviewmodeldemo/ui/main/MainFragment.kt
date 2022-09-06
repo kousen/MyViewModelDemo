@@ -12,10 +12,6 @@ import com.oreilly.myviewmodeldemo.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
     // viewModels delegate is in fragment-ktx library
     private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: MainFragmentBinding
@@ -23,7 +19,6 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         binding = MainFragmentBinding.inflate(inflater, container, false)
-        // binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
         return binding.root
     }
 
@@ -33,7 +28,7 @@ class MainFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.helloButton.setOnClickListener { v -> sayHello(v) }
+        binding.helloButton.setOnClickListener(this::sayHello)
 
 //        viewModel.greeting.observe(viewLifecycleOwner) {
 //            binding.greetingTextView.text = viewModel.greeting.value
